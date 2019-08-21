@@ -15,7 +15,8 @@ export async function startFollowing(
   asyncForEach(users, async (user: TagFeedResponseUser) => {
     const body = await client.ig.friendship.show(user.pk);
     if (body.followed_by) return;
-    var rand = (Math.random() * (120 - 60) + 60) * 1000;
+
+    let rand = (Math.random() * (120 - 60) + 60) * 1000;
     if (rand > 118000) {
       rand = (Math.random() * (360 - 300) + 300) * 1000;
       console.log("5min sleep");
@@ -23,6 +24,7 @@ export async function startFollowing(
       rand = (Math.random() * (600 - 500) + 500) * 1000;
       console.log("10min sleep");
     }
+
     try {
       // Follow user
       await client.ig.friendship.create(user.pk);
