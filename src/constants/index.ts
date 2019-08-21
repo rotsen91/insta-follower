@@ -7,3 +7,9 @@ export interface IClient {
   ig: IgApiClient;
   auth: any;
 }
+
+export interface IOptionDescription {
+  short_name: string;
+  long_name: string;
+  description: string;
+}
