@@ -11,6 +11,7 @@ if (args["function"] === undefined) {
 
 if (args["function"] === "f" || args["function"] === "follow") {
   console.log("Starting to Follow");
+
   follow();
 }
 

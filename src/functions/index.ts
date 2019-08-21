@@ -16,6 +16,6 @@ export async function follow() {
     let tag = tags[Math.floor(Math.random() * tags.length)];
     let users = await getUsers(tag, client);
     await startFollowing(users, client);
-    await Sleep(30000);
+    await Sleep(3000);
   }
 }

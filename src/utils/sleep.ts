@@ -1,3 +1,5 @@
 export async function Sleep(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() =>
+    console.log("next")
+  );
 }
