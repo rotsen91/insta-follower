@@ -1,4 +1,4 @@
-import { follow } from "./functions";
+import { follow, copyUsers } from "./functions";
 import { IOptionDescription } from "./constants";
 const args = require("minimist")(process.argv.slice(2));
 
@@ -18,6 +18,16 @@ if (args["function"] === "f" || args["function"] === "follow") {
 if (args["function"] === "p" || args["function"] === "purge") {
   console.log("Starting the Purge");
   //purge()
+}
+
+if (args["function"] === "c" || args["function"] === "copy") {
+  console.log("Copy followers from given username");
+  const user = args["user"];
+  if (!user) {
+    console.log("Usage: npm run start -- --function=c --user=[USER]");
+    process.exit(1);
+  }
+  copyUsers(user);
 }
 
 if (args["function"] === "l" || args["function"] === "like") {
@@ -51,6 +61,12 @@ function print_help() {
       short_name: "f",
       long_name: "follow",
       description: "Start following random people."
+    },
+    {
+      short_name: "c",
+      long_name: "copy",
+      description:
+        "Copy specified users followers: Usage: npm run start -- --function=c --user=[USER]"
     }
   ];
 

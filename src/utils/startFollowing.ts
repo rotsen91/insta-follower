@@ -2,8 +2,9 @@ import * as _ from "lodash";
 import { TagFeedResponseUser } from "instagram-private-api/dist/responses";
 import { IClient } from "../constants";
 import { Sleep } from "./sleep";
+
 export async function startFollowing(
-  users: [TagFeedResponseUser],
+  users: any,
   client: IClient
 ): Promise<void> {
   const asyncForEach = async (array, callback) => {
