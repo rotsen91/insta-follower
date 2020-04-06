@@ -13,7 +13,7 @@
     "dotenv": "^8.0.0",
     "instagram-private-api": "^1.9.0",
     "lodash": "^4.17.15",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "open": "^6.3.0",
     "prompt": "^1.0.0",
     "prompt-async": "^0.9.9"
